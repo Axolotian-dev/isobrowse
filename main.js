@@ -1,7 +1,7 @@
-// Load the puppeteer-core library dynamically
+// Load the puppeteer library dynamically
 async function loadPuppeteer() {
     const script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/npm/puppeteer-core';
+    script.src = 'https://cdn.jsdelivr.net/npm/puppeteer';
     document.head.appendChild(script);
     return new Promise((resolve, reject) => {
         script.onload = resolve;
@@ -15,7 +15,6 @@ async function startChromium() {
 
     // Launch a headless Chromium instance
     const browser = await puppeteer.launch({
-        executablePath: '/path/to/chromium', // Provide the path to the Chromium executable
         headless: true
     });
 
